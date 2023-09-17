@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey, This is your Profile -__-'''</title>
+    <!-- jquery CDN incluer -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- CSS include -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                <a class="nav-link active" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/login.html">Login
+                    <span class="visually-hidden">(current)</span>
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/profile.html">User Profile</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/checkout.html">CheckOut</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/campaign.html">Create Campaign</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/product.html">Create Product</a>
+                </li>
+
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            </div>
+        </div>
+        </nav>
+
+    <script>
+        let baseUrl = "http://localhost:5000/Account/";
+        window.onload = function(){
+            params = new Proxy(new URLSearchParams(window.location.search),{
+                get: (searchparams,prop) => searchparams.get(prop),
+            });
+
+            let code = params.code;
+            let state = params.state;
+
+            // if(code == null || state == null) return;
+            if(code == null) return;
+
+            $.get({
+                url: baseUrl + `Tokens?authToken=${code}&callBackUrl=${window.location.toString().split("?")[0]}`,
+                dataType:'json',
+                contentType:'application/json',
+                success: function(res){
+                    $.post({
+                        url:baseUrl + `login/${res.access_token}`,
+                        dataType:'json',
+                        contentType:'application/json',
+                        success:function(res){
+                            console.log(res);
+                            localStorage.setItem('token', res.token);
+                        }
+                    });
+
+                },
+            })
+
+
+
+
+        }
+    </script>  
+
+    <div class="container">
+        <a>----------ACCESS TOKEN-------------</a>
+        <a><img src="" id="user_avatar"></a>
+        <a><a id="user_name">姓名 : </a></a>
+        <a><a id="user_id">使用者ID : </a></a>
+        <a><a id="user_status"></a></a>
+    </div>
+    
+    <div class="container">
+        <a>----------ID TOKEN-------------</a>
+        <a><img src="" id="IDToken_user_avatar"></a>
+        <a>iss (Token 簽發者) : <b id = "IDToken_ISS"></b></a>
+        <a>sub (使用者ID) : <b id = "IDToken_SUB"></b></a>
+        <a>aud (Channel ID) : <b id = "IDToken_Channel_ID"></b></a>
+        <a>exp (ID Token過期時間) : <b id = "IDToken_EXP"></b></a>
+        <a>iat (ID Token產生時間) : <b id = "IDToken_IAT"></b></a>
+        <a>amr (使用者登入方式) : <b id = "IDToken_AMR"></b></a>
+        <a>name (使用者登入方式) : <b id = "IDToken_NAME"></b></a>
+
+
+    </div>
+</body>
+</html>

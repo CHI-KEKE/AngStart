@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Secret User Profile hehe</title>
+
+    <!-- jquery CDN incluer -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <!-- CSS include -->
+    <link rel="stylesheet" href="dash.css">
+
+    <!-- plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script>
+    <script src="plotly-2.24.1.min.js" charset="utf-8"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+   <style id="plotly.js-style-global"></style>
+
+</head>
+
+
+
+<body>
+
+<div class="container">
+    <div id="count" class="Marketing">
+        <div id="number"></div>
+    </div>
+    <div id="pie" class = "Marketing"></div>
+    <div id="histogram" class = "Marketing"></div>
+    <div id="bar" class = "Marketing"></div>
+</div>
+
+
+
+<script>
+
+
+    //pie chart
+
+        let baseUrl = "https://cofstyle.shop/api/Order/loaddata";
+        window.onload = function(){
+            $.get({
+                url: baseUrl,
+                dataType:'json',
+                contentType:'application/json',
+                success: function(res){
+                    $("#number").text("Total Revenue: " + res.revenue);
+                    console.log(res);
+
+
+                    //pie chart
+                    var data = [{
+
+                    values: res.colorData.map(c => c.colorCount),
+                    labels: res.colorData.map(c => c.colorName),
+                    marker:{
+                        colors:res.colorData.map(c => c.colorCode),
+                    },
+                    type: 'pie'
+                    
+                    }];
+
+                    var layout = {
+                        title: {
+                            text:'Product sold percentage in different colors',
+                        },
+                        height: 350,
+                    };
+
+                    Plotly.newPlot('pie', data, layout);
+
+
+                    //histogram
+                    var trace = {
+                        x: res.prices,
+                        type: 'histogram',
+                    };
+                    var layout = {
+                        title: {
+                            text:'Product sold quantity in different price range',
+                        },
+                        xaxis: {
+                            title: {
+                                text: 'Price Range',
+                            },
+                        },
+                        yaxis: {
+                            title: {
+                                text: 'Quantity',
+                            }
+                        }
+                    };
+                    var data = [trace];
+                    Plotly.newPlot('histogram', data, layout);
+
+
+                    //bar
+                    var sizeData = res.topProductBySize
+                    .sort((a, b) => a.size.localeCompare(b.size))
+                    .map(d => ({
+                        x: d.ids.map(id => 'product ' + id),
+                        y: d.count,
+                        name: d.size,
+                        type: 'bar'
+                    }));
+
+                    var layout = {
+                        barmode: 'stack',
+                        title: {
+                            text:'Quantity of top 5 sold products in different sizes',
+                        },
+                        yaxis: {
+                            title: {
+                                text: 'Quantity',
+                            }
+                        }
+                    };
+
+                    Plotly.newPlot('bar', sizeData, layout);
+    
+                },
+            })
+        }
+</script>  
+<script>
+
+
+
+</script>
+
+
+
+</body>
+</html>

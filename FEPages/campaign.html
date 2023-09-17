@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Campaign</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+<body>
+    <form id="marketing-form" method="post" enctype="multipart/form-data" action="http://localhost:5000/Marketing/Create">
+    <fieldset>
+        <div class="container" mx="auto">
+            <legend class="legend">Create Campaign</legend>
+
+            <div class="form-group">
+                <label for="Product_Id" class="form-label mt-4">Product_Id</label>
+                <input type="number" class="form-control" id="Product_Id" name="Product_Id"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="Story" class="form-label mt-4">Story</label>
+                <textarea class="form-control" id="Story" rows="3" name="Story"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="picture" class="form-label mt-4">Main Image:</label>
+                <input type="file" id="picture" class="form-control" name="Picture" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit_btn">Submit</button>
+
+        </div>
+
+
+    </fieldset>
+    </form>
+
+</script>
+</body>
+</html>

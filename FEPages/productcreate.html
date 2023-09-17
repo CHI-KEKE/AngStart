@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+<body>
+ <form id="product-form" method="post" enctype="multipart/form-data" action="http://localhost:5000/Product/Create">
+  <fieldset>
+    <div class="container" mx="auto">
+        <legend class="legend">Create Product</legend>
+
+        <div class="form-group">
+        <label for="Categoy" class="form-label mt-4">Category</label>
+        <select class="form-select" id="Category" name="category">
+            <option>women</option>
+            <option>men</option>
+            <option>accessories</option>
+        </select>
+        </div>
+
+
+        <div class="form-group">
+        <label for="Title" class="form-label mt-4">Title</label>
+        <input type="text" class="form-control" id="Title" placeholder="Enter Title" name="title">
+        </div>
+
+        <div class="form-group">
+        <label for="Description" class="form-label mt-4">Description</label>
+        <textarea class="form-control" id="Description" rows="3" name="description"></textarea>
+        </div>
+
+        <div class="form-group">
+        <label for="Price" class="form-label mt-4">Price</label>
+        <input type="number" class="form-control" id="Price" name="price"></textarea>
+        </div>
+
+
+
+        <div class="form-group">
+        <label for="Texture" class="form-label mt-4">Texture</label>
+        <input type="text" class="form-control" id="Texture" placeholder="Texture" name="texture">
+        </div>
+
+
+        <div class="form-group">
+        <label for="Wash" class="form-label mt-4">Wash</label>
+        <input type="text" class="form-control" id="Wash" placeholder="Wash" name="wash">
+        </div>
+
+        <div class="form-group">
+        <label for="Place" class="form-label mt-4">Place</label>
+        <input type="text" class="form-control" id="Place" placeholder="Place" name="place">
+        </div>
+
+        <div class="form-group">
+            <label for="Note" class="form-label mt-4">Note</label>
+            <input type="text" class="form-control" id="Note" placeholder="Note" name="note">
+        </div>
+
+        <div class="form-group">
+        <label for="Story" class="form-label mt-4">Story</label>
+        <textarea class="form-control" id="Story" rows="3" name="story"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="main_image" class="form-label mt-4">Main Image:</label>
+            <input type="file" id="main_image" class="form-control" name="MainImage" required>
+        </div>
+        <div class="form-group">
+            <label for="images" class="form-label mt-4">Additional Images:</label>
+            <input type="file" id="images" class="form-control" name="Images" multiple>
+        </div>
+
+
+        <div id="variants-container">
+        <div class="variant form-group">
+            <label for="variant-color" class="form-label mt-4 mx-3">Color Code:</label>
+            <input type="text" class="variant-color mx-3" name = "VariantColors[]" required>
+  
+            <label for="variant-color-name" class="form-label mt-4 mx-3">Color Name:</label>
+            <input type="text" class="variant-color-name mx-3" name = "VariantColorNames[]" required>
+
+            <label for="variant-size" class="form-label mt-4 mx-3">Size:</label>
+            <input type="text" class="variant-size mx-3" name = "VariantSizes[]" required>
+
+            <label for="variant-stock" class="form-label mt-4 mx-3">Stock:</label>
+            <input type="number" class="variant-stock mx-3" name = "VariantStocks[]" required>
+        <button type="button" id="add-variant-btn" class="mt-4 mx-3">Add Variant</button>
+
+        </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit_btn">Submit</button>
+
+    </div>
+
+
+  </fieldset>
+</form>
+
+  <script>
+        const addVariantButton = document.getElementById('add-variant-btn');
+        const variantsContainer = document.getElementById('variants-container');
+
+        addVariantButton.addEventListener('click', function() {
+            const variantDiv = document.createElement('div');
+            variantDiv.className = 'variant form-group';
+
+            const colorLabel = document.createElement('label');
+            colorLabel.className = 'form-label mt-4 mx-3';
+            colorLabel.innerText = 'Color Code:';
+            variantDiv.appendChild(colorLabel);
+
+            const colorInput = document.createElement('input');
+            colorInput.type = 'text';
+            colorInput.className = 'variant-color mx-3';
+            colorInput.name = 'VariantColors[]';
+            colorInput.required = true;
+            variantDiv.appendChild(colorInput);
+
+            const colorNameLabel = document.createElement('label');
+            colorNameLabel.className = 'form-label mt-4 mx-3';
+            colorNameLabel.innerText = 'Color Name:';
+            variantDiv.appendChild(colorNameLabel);
+
+            const colorNameInput = document.createElement('input');
+            colorNameInput.type = 'text';
+            colorNameInput.className = 'variant-color-name mx-3';
+            colorNameInput.name = 'VariantColorNames[]';
+            colorNameInput.required = true;
+            variantDiv.appendChild(colorNameInput);
+
+
+
+            const sizeLabel = document.createElement('label');
+            sizeLabel.className = 'form-label mt-4 mx-3';
+            sizeLabel.innerText = 'Size:';
+            variantDiv.appendChild(sizeLabel);
+
+            const sizeInput = document.createElement('input');
+            sizeInput.type = 'text';
+            sizeInput.className = 'variant-size mx-3';
+            sizeInput.name = 'VariantSizes[]';
+            sizeInput.required = true;
+            variantDiv.appendChild(sizeInput);
+
+            const stockLabel = document.createElement('label');
+            stockLabel.className = 'form-label mt-4 mx-3';
+            stockLabel.innerText = 'Stock:';
+            variantDiv.appendChild(stockLabel);
+
+            const stockInput = document.createElement('input');
+            stockInput.type = 'number';
+            stockInput.className = 'variant-stock mx-3';
+            stockInput.name = 'VariantStocks[]';
+            stockInput.required = true;
+            variantDiv.appendChild(stockInput);
+
+            variantsContainer.appendChild(variantDiv);
+        });
+  </script>
+</script>
+</body>
+</html>

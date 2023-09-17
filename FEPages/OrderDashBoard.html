@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Secret User Profile hehe</title>
+
+    <!-- jquery CDN incluer -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <!-- CSS include -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script>
+    <script src="plotly-2.24.1.min.js" charset="utf-8"></script>
+</head>
+
+
+
+<body>
+    <div class="topnav">
+        <a href="https://b428-2402-7500-4dc-aefe-a9e6-ef98-a574-768f.ngrok-free.app/Henry/FE_Pages/login.html">Login!</a>
+        <a href="https://b428-2402-7500-4dc-aefe-a9e6-ef98-a574-768f.ngrok-free.app/Henry/FE_Pages/profile.html">User Profile</a>
+        <a href="#">LINE PAY</a>
+    </div>
+    <script>
+        let baseUrl = "https://localhost:8080/api/LineLogin/";
+        window.onload = function(){
+            params = new Proxy(new URLSearchParams(window.location.search),{
+                get: (searchparams,prop) => searchparams.get(prop),
+            });
+
+            let code = params.code;
+            let state = params.state;
+
+            if(code == null || state == null) return;
+
+            $.get({
+                url: baseUrl + `Tokens?authToken=${code}&callBackUrl=${window.location.toString().split("?")[0]}`,
+                dataType:'json',
+                contentType:'application/json',
+                success: function(res){
+                    $.get({
+                        url:baseUrl + `Profile/${res.access_token}`,
+                        dataType:'json',
+                        contentType:'application/json',
+                        success:function(res){
+                            $("#user_avatar").attr("src",res.pictureUrl);
+                            $("#user_name").text('姓名 : ' + res.displayName);
+                            $("#user_id").text('使用者ID : ' + res.userId);
+                            $("#user_status").text(res.statusMessage);
+                            console.log(res.pictureUrl)
+                            console.log(res.displayName)
+                            console.log(res.userId)
+                            console.log(res.statusMessage)
+                        }
+                    });
+
+                    $.get({
+                        url:baseUrl + `Profile/IdToken/${res.id_token}`,
+                        dataType:'json',
+                        contentType:'application/json',
+                        success:function(res){
+                            $("#IDToken_user_avatar").attr("src",res.picture);
+                            $("#IDToken_ISS").text(res.iss);
+                            $("#IDToken_SUB").text(res.sub);
+                            $("#IDToken_Channel_ID").text(res.aud);
+                            $("#IDToken_EXP").text(res.exp);
+                            $("#IDToken_IAT").text(res.iat);
+                            $("#IDToken_AMR").text(res.amr);
+                            $("#IDToken_NAME").text(res.name);
+
+                            console.log(res.picture)
+                            console.log(res.iss)
+                            console.log(res.sub)
+                            console.log(rres.aud)
+                            console.log(res.exp)
+                            console.log(res.iat)
+                            console.log(res.amr)
+                            console.log(res.name)
+                        }
+                    });
+
+                },
+            })
+        }
+    </script>  
+    <div class="container">
+        <a>----------ACCESS TOKEN-------------</a>
+        <a><img src="" id="user_avatar"></a>
+        <a><a id="user_name">姓名 : </a></a>
+        <a><a id="user_id">使用者ID : </a></a>
+        <a><a id="user_status"></a></a>
+    </div>
+    <div class="container">
+        <a>----------ID TOKEN-------------</a>
+        <a><img src="" id="IDToken_user_avatar"></a>
+        <a>iss (Token 簽發者) : <b id = "IDToken_ISS"></b></a>
+        <a>sub (使用者ID) : <b id = "IDToken_SUB"></b></a>
+        <a>aud (Channel ID) : <b id = "IDToken_Channel_ID"></b></a>
+        <a>exp (ID Token過期時間) : <b id = "IDToken_EXP"></b></a>
+        <a>iat (ID Token產生時間) : <b id = "IDToken_IAT"></b></a>
+        <a>amr (使用者登入方式) : <b id = "IDToken_AMR"></b></a>
+        <a>name (使用者登入方式) : <b id = "IDToken_NAME"></b></a>
+
+
+    </div>
+</body>
+</html>

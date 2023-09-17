@@ -1,0 +1,430 @@
+[
+  {
+    "Category": "women",
+    "Title": "前開衩扭結洋裝",
+    "Description": "厚薄：薄\r\n彈性:無",
+    "Price": 799,
+    "Texture": "棉 100%",
+    "Wash": "手洗，溫水",
+    "Place": "中國",
+    "Note": "實品顏色依單品照為主",
+    "Story": "O.N.S is all about options, which is why we took our staple polo shirt and upgraded it with slubby linen jersey, making it even lighter for those who prefer their summer style extra-breezy.",
+    "Main_image": "https://api.appworks-school.tw/assets/201807201824/main.jpg",
+    "Images": [
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807201824/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807201824/1.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807201824/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807201824/1.jpg"
+      }
+    ],
+    "Variants": [
+      {
+        "ColorCode": "BB7744",
+        "Size": "S",
+        "Stock": 2
+      },
+      {
+        "ColorCode": "BB7744",
+        "Size": "M",
+        "Stock": 6
+      }
+    ],
+    "Colors": [
+      {
+        "Code": "FFFFFF",
+        "Name": "白色"
+      },
+      {
+        "Code": "DDFFBB",
+        "Name": "亮綠"
+      },
+      {
+        "Code": "CCCCCC",
+        "Name": "淺灰"
+      }
+    ],
+    "Sizes": [
+      {
+        "SizeMark": "M"
+      },
+      {
+        "SizeMark": "L"
+      },
+      {
+        "SizeMark": "XL"
+      }
+    ]
+  },
+  {
+    "Category": "women",
+    "Title": "透肌澎澎防曬襯衫",
+    "Description": "厚薄：薄\r\n彈性：無",
+    "Price": 599,
+    "Texture": "棉 100%",
+    "Wash": "手洗，溫水",
+    "Place": "中國",
+    "Note": "實品顏色依單品照為主",
+    "Story": "O.N.S is all about options, which is why we took our staple polo shirt and upgraded it with slubby linen jersey, making it even lighter for those who prefer their summer style extra-breezy.",
+    "Main_image": "https://api.appworks-school.tw/assets/201807202140/main.jpg",
+    "Images": [
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202140/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202140/1.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202140/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202140/1.jpg"
+      }
+    ],
+    "Variants": [
+      {
+        "ColorCode": "CCCCCC",
+        "Size": "S",
+        "Stock": 1
+      },
+      {
+        "ColorCode": "CCCCCC",
+        "Size": "M",
+        "Stock": 6
+      },
+      {
+        "ColorCode": "CCCCCC",
+        "Size": "L",
+        "Stock": 2
+      }
+    ],
+    "Colors": [
+      {
+        "Code": "DDFFBB",
+        "Name": "亮綠"
+      },
+      {
+        "Code": "CCCCCC",
+        "Name": "淺灰"
+      }
+    ],
+    "Sizes": [
+      {
+        "SizeMark": "M"
+      },
+      {
+        "SizeMark": "L"
+      },
+      {
+        "SizeMark": "XL"
+      }
+    ]
+  },
+  {
+    "Category": "women",
+    "Title": "小扇紋細織上衣",
+    "Description": "厚薄：薄\r\n彈性：無",
+    "Price": 599,
+    "Texture": "棉 100%",
+    "Wash": "手洗，溫水",
+    "Place": "中國",
+    "Note": "實品顏色依單品照為主",
+    "Story": "O.N.S is all about options, which is why we took our staple polo shirt and upgraded it with slubby linen jersey, making it even lighter for those who prefer their summer style extra-breezy.",
+    "Main_image": "https://api.appworks-school.tw/assets/201807202150/main.jpg",
+    "Images": [
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202150/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202150/1.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202150/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202150/1.jpg"
+      }
+    ],
+    "Variants": [
+      {
+        "ColorCode": "BB7744",
+        "Size": "S",
+        "Stock": 2
+      },
+      {
+        "ColorCode": "BB7744",
+        "Size": "M",
+        "Stock": 6
+      }
+    ],
+    "Colors": [
+      {
+        "Code": "CCCCCC",
+        "Name": "淺灰"
+      },
+      {
+        "Code": "BB7744",
+        "Name": "淺棕"
+      }
+    ],
+    "Sizes": [
+      {
+        "SizeMark": "M"
+      },
+      {
+        "SizeMark": "L"
+      },
+      {
+        "SizeMark": "XL"
+      }
+    ]
+  },
+  {
+    "Category": "women",
+    "Title": "活力花紋長筒牛仔褲",
+    "Description": "厚薄：薄\r\n彈性：無",
+    "Price": 1299,
+    "Texture": "棉 100%",
+    "Wash": "手洗，溫水",
+    "Place": "中國",
+    "Note": "實品顏色依單品照為主",
+    "Story": "O.N.S is all about options, which is why we took our staple polo shirt and upgraded it with slubby linen jersey, making it even lighter for those who prefer their summer style extra-breezy.",
+    "Main_image": "https://api.appworks-school.tw/assets/201807202157/main.jpg",
+    "Images": [
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202157/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202157/1.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202157/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807202157/1.jpg"
+      }
+    ],
+    "Variants": [
+
+      {
+        "ColorCode": "CCCCCC",
+        "Size": "S",
+        "Stock": 0
+      },
+      {
+        "ColorCode": "CCCCCC",
+        "Size": "M",
+        "Stock": 6
+      },
+      {
+        "ColorCode": "CCCCCC",
+        "Size": "L",
+        "Stock": 5
+      },
+      {
+        "ColorCode": "334455",
+        "Size": "S",
+        "Stock": 2
+      },
+      {
+        "ColorCode": "334455",
+        "Size": "M",
+        "Stock": 7
+      },
+      {
+        "ColorCode": "334455",
+        "Size": "L",
+        "Stock": 9
+      }
+    ],
+    "Colors": [
+      {
+        "Code": "DDF0FF",
+        "Name": "淺藍"
+      },
+      {
+        "Code": "CCCCCC",
+        "Name": "淺灰"
+      },
+      {
+        "Code": "334455",
+        "Name": "深藍"
+      }
+    ],
+    "Sizes": [
+      {
+        "SizeMark": "M"
+      },
+      {
+        "SizeMark": "L"
+      },
+      {
+        "SizeMark": "XL"
+      }
+    ]
+  },
+  {
+    "Category": "men",
+    "Title": "純色輕薄百搭襯衫",
+    "Description": "厚薄：薄\r\n彈性：無",
+    "Price": 799,
+    "Texture": "棉 100%",
+    "Wash": "手洗，溫水",
+    "Place": "中國",
+    "Note": "實品顏色依單品照為主",
+    "Story": "O.N.S is all about options, which is why we took our staple polo shirt and upgraded it with slubby linen jersey, making it even lighter for those who prefer their summer style extra-breezy.",
+    "Main_image": "https://api.appworks-school.tw/assets/201807242211/main.jpg",
+    "Images": [
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807242211/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807242211/1.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807242211/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807242211/1.jpg"
+      }
+    ],
+    "Variants": [
+      {
+        "ColorCode": "FFFFFF",
+        "Size": "M",
+        "Stock": 5
+      },
+      {
+        "ColorCode": "FFFFFF",
+        "Size": "L",
+        "Stock": 7
+      },
+      {
+        "ColorCode": "FFFFFF",
+        "Size": "XL",
+        "Stock": 1
+      },
+      {
+        "ColorCode": "DDF0FF",
+        "Size": "M",
+        "Stock": 1
+      },
+      {
+        "ColorCode": "DDF0FF",
+        "Size": "L",
+        "Stock": 4
+      },
+      {
+        "ColorCode": "DDF0FF",
+        "Size": "XL",
+        "Stock": 3
+      }
+    ],
+    "Colors": [
+      {
+        "Code": "FFFFFF",
+        "Name": "白色"
+      },
+      {
+        "Code": "DDF0FF",
+        "Name": "淺藍"
+      }
+    ],
+    "Sizes": [
+      {
+        "SizeMark": "M"
+      },
+      {
+        "SizeMark": "L"
+      },
+      {
+        "SizeMark": "XL"
+      }
+    ]
+  },
+  {
+    "Category": "men",
+    "Title": "時尚輕鬆休閒西裝",
+    "Description": "厚薄：薄\r\n彈性：無",
+    "Price": 2399,
+    "Texture": "棉 100%",
+    "Wash": "手洗，溫水",
+    "Place": "中國",
+    "Note": "實品顏色依單品照為主",
+    "Story": "O.N.S is all about options, which is why we took our staple polo shirt and upgraded it with slubby linen jersey, making it even lighter for those who prefer their summer style extra-breezy.",
+    "Main_image": "https://api.appworks-school.tw/assets/201807242216/main.jpg",
+    "Images": [
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807242216/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807242216/1.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807242216/0.jpg"
+      },
+      {
+        "Url": "https://api.appworks-school.tw/assets/201807242216/1.jpg"
+      }
+    ],
+    "Variants": [
+      {
+        "ColorCode": "FFFFFF",
+        "Size": "S",
+        "Stock": 10
+      },
+      {
+        "color_code": "FFFFFF",
+        "size": "M",
+        "stock": 5
+      },
+      {
+        "ColorCode": "FFFFFF",
+        "Size": "L",
+        "Stock": 6
+      },
+      {
+        "ColorCode": "CCCCCC",
+        "Size": "S",
+        "Stock": 1
+      },
+      {
+        "ColorCode": "CCCCCC",
+        "Size": "M",
+        "Stock": 3
+      },
+      {
+        "ColorCode": "CCCCCC",
+        "Size": "L",
+        "Stock": 10
+      }
+    ],
+    "Colors": [
+      {
+        "Code": "FFFFFF",
+        "Name": "白色"
+      },
+      {
+        "Code": "CCCCCC",
+        "Name": "淺灰"
+      }
+    ],
+    "Sizes": [
+      {
+        "SizeMark": "S"
+      },
+      {
+        "SizeMark": "M"
+      },
+      {
+        "SizeMark": "L"
+      }
+    ]
+  }
+]

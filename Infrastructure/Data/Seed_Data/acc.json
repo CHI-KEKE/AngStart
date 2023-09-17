@@ -1,0 +1,185 @@
+[
+    {
+      "Category": "accessories",
+      "Title": "夏日海灘戶外遮陽帽",
+      "Description": "厚薄：薄 彈性：無",
+      "Price": 1499,
+      "Texture": "棉 100%",
+      "Wash": "手洗，溫水",
+      "Place": "中國",
+      "Note": "實品顏色依單品照為主",
+      "Story": "O.N.S is all about options, which is why we took our staple polo shirt and upgraded it with slubby linen jersey, making it even lighter for those who prefer their summer style extra-breezy.",
+      "Main_image": "qqq",
+      "Images": [
+        {
+          "Url": "aaa"
+        },
+        {
+          "Url": "bbb"
+        },
+        {
+          "Url": "ccc"
+        }
+      ],
+
+      "Variants": [
+        {
+          "ColorCode": "BB7744",
+          "Size": "S",
+          "Stock": 2
+        },
+        {
+          "ColorCode": "BB7744",
+          "Size": "M",
+          "Stock": 6
+        }
+      ],
+      "Colors": [
+        {
+          "Code": "FFFFFF",
+          "Name": "白色"
+        },
+        {
+          "Code": "DDFFBB",
+          "Name": "亮綠"
+        },
+        {
+          "Code": "CCCCCC",
+          "Name": "淺灰"
+        }
+      ],
+      "Sizes": [
+        {
+          "SizeMark": "M"
+        },
+        {
+          "SizeMark": "L"
+        },
+        {
+          "SizeMark": "XL"
+        }
+      ]
+    },
+    {
+      "Category": "accessories",
+      "Title": "經典牛仔帽",
+      "Description": "厚薄：薄 彈性：無",
+      "Price": 799,
+      "Texture": "棉 100%",
+      "Wash": "手洗，溫水",
+      "Place": "中國",
+      "Note": "實品顏色依單品照為主",
+      "Story": "O.N.S is all about options, which is why we took our staple polo shirt and upgraded it with slubby linen jersey, making it even lighter for those who prefer their summer style extra-breezy.",
+      "Main_image": "https://api.appworks-school.tw/assets/201807242230/main.jpg",
+      "Images": [
+        {
+          "Url": "aaa"
+        },
+        {
+          "Url": "bbb"
+        },
+        {
+          "Url": "ccc"
+        }
+      ],
+
+      "Variants": [
+        {
+          "ColorCode": "BB7744",
+          "Size": "S",
+          "Stock": 2
+        },
+        {
+          "ColorCode": "BB7744",
+          "Size": "M",
+          "Stock": 6
+        }
+      ],
+      "Colors": [
+        {
+          "Code": "FFFFFF",
+          "Name": "白色"
+        },
+        {
+          "Code": "DDFFBB",
+          "Name": "亮綠"
+        },
+        {
+          "Code": "CCCCCC",
+          "Name": "淺灰"
+        }
+      ],
+      "Sizes": [
+        {
+          "SizeMark": "M"
+        },
+        {
+          "SizeMark": "L"
+        },
+        {
+          "SizeMark": "XL"
+        }
+      ]
+    },
+    {
+      "Category": "accessories",
+      "Title": "卡哇伊多功能隨身包",
+      "Description": "厚薄：薄 彈性：無",
+      "Price": 1299,
+      "Texture": "棉 100%",
+      "Wash": "手洗，溫水",
+      "Place": "中國",
+      "Note": "實品顏色依單品照為主",
+      "Story": "O.N.S is all about options, which is why we took our staple polo shirt and upgraded it with slubby linen jersey, making it even lighter for those who prefer their summer style extra-breezy.",
+      "Main_image": "https://api.appworks-school.tw/assets/201807242232/main.jpg",
+      "Images": [
+        {
+          "Url": "aaa"
+        },
+        {
+          "Url": "bbb"
+        },
+        {
+          "Url": "ccc"
+        }
+      ],
+
+      "Variants": [
+        {
+          "ColorCode": "BB7744",
+          "Size": "S",
+          "Stock": 2
+        },
+        {
+          "ColorCode": "BB7744",
+          "Size": "M",
+          "Stock": 6
+        }
+      ],
+      "Colors": [
+        {
+          "Code": "FFFFFF",
+          "Name": "白色"
+        },
+        {
+          "Code": "DDFFBB",
+          "Name": "亮綠"
+        },
+        {
+          "Code": "CCCCCC",
+          "Name": "淺灰"
+        }
+      ],
+      "Sizes": [
+        {
+          "SizeMark": "M"
+        },
+        {
+          "SizeMark": "L"
+        },
+        {
+          "SizeMark": "XL"
+        }
+      ]
+    }
+]

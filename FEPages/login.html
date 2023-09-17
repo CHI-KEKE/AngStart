@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>~Login~</title>
+
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "629483562400919",
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: "v17.0",
+        });
+      };
+
+
+
+
+    </script>
+
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+  </head>
+
+  <body>
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/login.html">Login
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/profile.html">User Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/checkout.html">CheckOut</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/campaign.html">Create Campaign</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/product.html">Create Product</a>
+        </li>
+
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+  <div class="container d-flex align-items-center mt-5">
+        <button type="button" class="btn btn-dark me-5" onclick="loginNative()">Login Natively</button>
+
+        <div
+          class="fb-login-button"
+          data-width=""
+          data-size="large"
+          data-button-type="continue_with"
+          data-layout="default"
+          data-auto-logout-link="false"
+          data-use-continue-as="true"
+          scope="public_profile,email"
+          onlogin="login();"
+        ></div>
+  </div>
+    <script>
+    var token = localStorage.getItem('token');
+    if (token) {
+        console.log("oh ya you have token!!")
+        // Redirect to the login page if the token is not found
+        window.location.href = 'https://41fd-49-216-223-108.ngrok-free.app/FEPages/profile.html';
+    }
+    console.log("oh no you dont have token!!")
+    
+
+
+        baseUrl = "http://localhost:5000/Account/"
+        function login(){
+            $.get({
+                url: baseUrl + 'Url' + "?redirect_url=https://41fd-49-216-223-108.ngrok-free.app/FEPages/profile.html",
+                contentType:"application/json;charset=utf-8",
+                success:function(result){
+                    window.location = result;
+                }
+            })
+        }
+        function loginNative(){
+
+                let loginTemplate ={
+                    "email": "moji@gmail.com",
+                    "password": "Pa$_w0rd"
+                }
+
+                 $.ajax({
+                    url: baseUrl + "login",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(loginTemplate),
+                    success: (res) => {
+                        // Handle the success response
+                        console.log(res);
+                        localStorage.setItem('token', res.token);
+                    },
+                    error: (xhr, status, error) => {
+                        // Handle the error response
+                        console.log(error);
+                    }
+                });
+        }
+    </script>
+  </body>
+</html>

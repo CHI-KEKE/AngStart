@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+      .tpfield {
+        height: 40px;
+        width: 300px;
+        border: 1px solid gray;
+        margin: 5px 0;
+        padding: 5px;
+      }
+
+        .has-error .tappay-field-focus {
+            border-color: #843534;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+        }
+        .has-success .tappay-field-focus {
+            border-color: #2b542c;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #67b168;
+        }
+        #email{
+            font-family: 'fantasy';
+            font-weight: bold;
+        }
+    </style>
+  </head>
+
+  <body>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                <a class="nav-link active" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/login.html">Login
+                    <span class="visually-hidden">(current)</span>
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/profile.html">User Profile</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/checkout.html">CheckOut</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/campaign.html">Create Campaign</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://41fd-49-216-223-108.ngrok-free.app/FEPages/product.html">Create Product</a>
+                </li>
+
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            </div>
+        </div>
+        </nav>
+
+<!-- checkout form -->
+    <form class=" d-flex align-items-center justify-content-center">
+        <fieldset>
+            <div class="container" >
+                <div class="form-group">
+                    <label for="email" class="form-label mt-4">Email address</label>
+                    <input type="email" class="tpfield form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group card-number-group">
+                    <label class="col-form-label mt-4" for="card-number"><span id="cardtype"></span>Card Number</label>
+                    <div class="tpfield form-control card-number"></div>
+                </div>
+                <div class="form-group expiration-date-group">
+                    <label class="col-form-label mt-4" for="expiration-date">Expiration Date</label>
+                    <div class="tpfield form-control" id="expiration-date"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label mt-4" for="ccv">ccv</label>
+                    <div class="tpfield form-control" id="ccv"></div>
+                </div>
+                <div class="container text-center">
+                    <button type="submit" class="submit_btn btn btn-success" disabled>Pay</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+            
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://js.tappaysdk.com/sdk/tpdirect/v5.14.0"></script> -->
+    <script src="https://js.tappaysdk.com/sdk/tpdirect/v5.15.1"></script>
+
+    <script>
+          TPDirect.setupSDK(12348, 'app_pa1pQcKoY22IlnSXq5m5WP5jFKzoRG58VEXpT7wU62ud7mMbDOGzCYIlzzLF', 'sandbox')
+          TPDirect.card.setup({
+                fields : {
+                        number: {
+                            // css selector
+                            element: '.card-number',
+                            placeholder: '**** **** **** ****'
+                        },
+                        expirationDate: {
+                            // DOM object
+                            element: document.getElementById('expiration-date'),
+                            placeholder: 'MM / YY'
+                        },
+                        ccv: {
+                            element: '#ccv',
+                            placeholder: 'ccv'
+                        }
+                    },
+                styles: {
+                        // Style all elements
+                        'input': {
+                            'color': 'black',
+                             'font-family':'fantasy'
+                        },
+                        // Styling ccv field
+                        'input.ccv': {
+                            'font-size': '16px'
+                        },
+                        // Styling expiration-date field
+                        'input.expiration-date': {
+                            'font-size': '16px'
+                        },
+                        // Styling card-number field
+                        'input.card-number': {
+                            'font-size': '16px'
+                        },
+                        // style focus state
+                        ':focus': {
+                            'color': 'black'
+                        },
+                        // style valid state
+                        '.valid': {
+                            'color': 'green'
+                        },
+                        // style invalid state
+                        '.invalid': {
+                            'color': 'red'
+                        },
+                        // Media queries
+                        // Note that these apply to the iframe, not the root window.
+                        '@media screen and (max-width: 400px)': {
+                            'input': {
+                                'color': 'orange'
+                            }
+                        }
+                    },
+      // 此設定會顯示卡號輸入正確後，會顯示前六後四碼信用卡卡號
+                isMaskCreditCardNumber: true,
+                maskCreditCardNumberRange: {
+                    beginIndex: 6,
+                    endIndex: 11
+                }
+            });
+
+        
+
+        function setNumberFormGroupToError(selector) {
+            $(selector).addClass('has-error')
+            $(selector).removeClass('has-success')
+        }
+
+        function setNumberFormGroupToSuccess(selector) {
+            $(selector).removeClass('has-error')
+            $(selector).addClass('has-success')
+        }
+
+        function setNumberFormGroupToNormal(selector) {
+            $(selector).removeClass('has-error')
+            $(selector).removeClass('has-success')
+        }
+
+        TPDirect.card.onUpdate(((update) =>{
+                // update.canGetPrime === true
+                // --> you can call TPDirect.card.getPrime()
+                console.log("If we are eligible to get prime?" + update.canGetPrime);
+                if (update.canGetPrime) {
+                    // Enable submit Button to get prime.
+                    $('button[type="submit"]').removeAttr('disabled');
+                    // submitButton.removeAttribute('disabled')
+                } else {
+                    // Disable submit Button to get prime.
+                    // submitButton.setAttribute('disabled', true)
+                    $('button[type="submit"]').attr('disabled', true)
+                }
+                    console.log("Checked card type :" + update.cardType)
+
+                // number 欄位是錯誤的
+                if (update.status.number === 2) {
+                    // setNumberFormGroupToError()
+                    setNumberFormGroupToError('.card-number-group')
+                } else if (update.status.number === 0) {
+                    // setNumberFormGroupToSuccess()
+                    setNumberFormGroupToSuccess('.card-number-group')
+                } else {
+                    // setNumberFormGroupToNormal()
+                    setNumberFormGroupToNormal('.card-number-group')
+                }
+
+                if (update.status.expiry === 2) {
+                    // setNumberFormGroupToError()
+                    setNumberFormGroupToError('.expiration-date-group')
+                } else if (update.status.expiry === 0) {
+                    // setNumberFormGroupToSuccess()
+                    setNumberFormGroupToSuccess('.expiration-date-group')
+                } else {
+                    // setNumberFormGroupToNormal()
+                    setNumberFormGroupToNormal('.expiration-date-group')
+                }
+
+                if (update.status.ccv === 2) {
+                    // setNumberFormGroupToError()
+                    setNumberFormGroupToError('.ccv-group')
+                } else if (update.status.ccv === 0) {
+                    // setNumberFormGroupToSuccess()
+                    setNumberFormGroupToSuccess('.ccv-group')
+                } else {
+                    // setNumberFormGroupToNormal()
+                    setNumberFormGroupToNormal('.ccv-group')
+                }
+        }));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        $("form").on("submit",(event) =>{
+            event.preventDefault();
+            const tappyStatus = TPDirect.card.getTappayFieldsStatus()
+            console.log("The status when you clicked the submit button : " + tappyStatus.canGetPrime);
+
+            if(tappyStatus.canGetPrime === false)
+            {
+                alert("can not get prime!!");
+                return
+            }
+            TPDirect.card.getPrime((result) => {
+                if (result.status !== 0) {
+                    console.log(result);
+                    alert('get prime error ' + result.msg)
+                    return
+                }
+                console.log('get prime 成功, your prime: ' + result.card.prime)
+                
+                
+                
+                //send a post reqeust!!
+                var accessToken = localStorage.getItem('token');
+                var baseUrl = "http://localhost:5000/";
+                payment = {
+                    "prime": result.card.prime,
+
+                    "order": {
+                                "shipping": "delivery",
+                                "payment": "credit_card",
+                                "subtotal": 1234,
+                                "freight": 14,
+                                "total": 1300,
+                                "recipient": {
+                                        "name": "Luke",
+                                        "nationalid":"A123456789",
+                                        "phone": "0987654321",
+                                        "email": "luke@gmail.com",
+                                        "address": "市政府站",
+                                        "zipcode":"100",
+                                        "time": "morning"
+                                },
+                                "list": [
+                                    {
+                                        "id": "201807202157",
+                                        "name": "活力花紋長筒牛仔褲",
+                                        "price": 1299,
+                                        "color": {
+                                            "code": "DDF0FF",
+                                            "name": "淺藍"
+                                        },
+                                        "size": "M",
+                                        "qty": 1
+                                    }
+                                ]
+                            }
+                }
+                 $.ajax({
+                    url: baseUrl + "Pay/Create",
+                    type: "POST",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+                    },
+                    contentType: "application/json",
+                    data: JSON.stringify(payment),
+                    success: (res) => {
+                        // Handle the success response
+                        console.log(res);
+                    },
+                    error: (xhr, status, error) => {
+                        // Handle the error response
+
+                        console.log(error,status);
+                        if (xhr.status === 401) {
+                        console.log("Please get a token first >__<");
+                        }
+                        
+                    }
+                });
+
+            
+            
+
+            })
+        })
+
+
+
+    </script>
+  </body>
+</html>
